@@ -25,3 +25,24 @@ console.log(arrlength);
 
 frutas.pop(); //remove o último item da lista
 console.log(frutas);
+
+frutas.unshift("Pera"); // insere o item no inicio da lista
+console.log(frutas);
+
+frutas.shift(); //remove no inicio da lista
+console.log(frutas);
+
+const salgados = Array("Pastel","Kibe","Coxinha");
+console.log(salgados);
+
+const feira = frutas.concat(salgados); //juntando arrays
+console.log(feira);
+
+feira.slice(3, 6); //passa os valores de acordo como parametro do índice
+feira.slice(3); //passa os valores a partir dessa posição
+//const Arr = feira.slice(-1); //passa os valores a partir da última posição
+const Arr = feira.slice(-3); //passa os valores a partir da última posição
+console.log(Arr);
+
+feira.splice(2); //remove os itens da origem a partir do índice
+feira.splice(0, 0, "first"); //adiciona ou substitui a partir dos parametros passados
