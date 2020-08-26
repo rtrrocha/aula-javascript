@@ -159,5 +159,10 @@ const idadespar = jidades.some(value => value % 2 === 0);
 console.log(idadespar);
 const menorde18 = jidades.some(value => value < 18);
 console.log(menorde18);
-
+const estudantes = [{nome:"Ricardo", nota: 8},{nome:"Karla", nota: 10},{nome:"Pondera", nota: 5}];
+console.log(estudantes);
+const temaprovado = estudantes.some(estudantes => estudantes.nota > 7);
+console.log(temaprovado);
+const quem = estudantes.find(estudantes => estudantes.nota > 9);
+console.log(quem);
 
