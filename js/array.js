@@ -84,7 +84,7 @@ console.log(feira.map((feira, index) =>  index +' - '+ feira));
 // profundidade especificada(depth))
 const idades = [18, 23, 27,[19,22,26],[21,28,31]]; //3 arrays em um
 console.log(idades);
-
+jidades = idades.flat();
 console.log(idades.flat(2)); //passando um depth de parâmetro
 
 //flatMap (Retorna um novo array assim como a função map e executa
@@ -121,3 +121,35 @@ console.log(narrIterator.next());
 console.log(narrIterator.next());
 console.log(narrIterator.next());
 console.log(narrIterator.next());
+
+//find (Retorna o primeiro item de um array 
+//que satisfaz a condição)
+const maiorque21 = idades.find(value => value > 21);
+console.log(maiorque21);
+
+//findIndex (Retorna o índice do primeiro item de 
+//um array que satisfaça a condição)
+const Imaiorque21 = idades.findIndex(value => value > 21);
+console.log(Imaiorque21);
+
+//filter (Retorna um novo array com todos os elementos
+//que satisfazem a condição)
+console.log(jidades);
+const Fmaiorque21 = jidades.filter(value => value > 21);
+console.log(Fmaiorque21);
+
+//indexOf (Retorna o primeiro índice em que um elemento
+// pode ser encontrado no aray)
+const Inmaiorque21 = jidades.indexOf(21);
+console.log(Inmaiorque21);
+
+//lastIndexOf (Retorna o último índice em que um 
+// elemento pode ser encontrado no array)
+const LInmaiorque21 = jidades.lastIndexOf(21);
+console.log(LInmaiorque21);
+
+//includes (Retorna um booleano verificando se determinado
+// elemento existe no array)
+const Existe21 = jidades.includes(21);
+console.log(Existe21);
+
