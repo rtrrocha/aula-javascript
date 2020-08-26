@@ -208,7 +208,7 @@ const alunos = [
   console.log(alunos.filter(alunoAprovado));
   console.log(alunos.some(alunoAprovado));
   console.log(alunos.every(alunoAprovado));
-
+/*
   const colaboradores = [
     { nome: "Cris", horasTrabalhadas: 220 },
     { nome: "Rebeca", horasTrabalhadas: 210 }
@@ -241,3 +241,123 @@ console.log(pessoas.indexOf("Cris"));
 console.log(pessoas.findIndex(nome => nome === "Cris"));
 console.log(pessoas.lastIndexOf("Cris"));
 console.log(pessoas.find(nome => nome === "Cris"));
+*/
+
+class Pessoa {
+  #nome = '';
+
+  constructor(nome) {
+    this.#nome = nome;
+  }
+
+  get nome() {
+    return `Seu nome é: ${this.#nome}.`;
+  }
+
+  set nome(novoNome) {
+    this.#nome = novoNome;
+  }
+}
+
+const pessoa = new Pessoa();
+
+console.log(pessoa);
+console.log(pessoa.nome);
+pessoa.nome = 'Foo';
+console.log(pessoa.nome);
+
+function Conta() {}
+Conta.prototype.rendimento = 0;
+Conta.prototype.depositar = function() {}
+Conta.prototype.retirar = function() {}
+Conta.prototype.exibirSaldo = function() {
+  return `O saldo da conta é: ${this.saldo}.`;
+}
+
+function ContaPoupanca() {
+  this.exibirSaldo = function() {
+    return 'Operação não disponível';
+  }
+}
+
+ContaPoupanca.prototype.rendimento = 0.03;
+ContaPoupanca.prototype = Object.create(Conta.prototype);
+
+const contaPoupanca = new ContaPoupanca();
+console.log(contaPoupanca);
+
+class ID {
+	static #contador = 0;
+
+  static get contador() {
+    return this.#contador;
+  }
+
+  static incrementaContador() {
+    return ++this.#contador;
+  }
+}
+
+class Cliente {
+  #id = 0;
+
+  constructor() {
+    this.#id = ID.incrementaContador();
+  }
+
+  get id() {
+    return this.#id;
+  }
+}
+
+const c1 = new Cliente();
+console.log(`Contador atual: ${ID.contador}.`);
+
+const c2 = new Cliente();
+const c3 = new Cliente();
+
+console.log(`Contador atual: ${ID.contador}.`);
+/*
+function Pessoas(nome) {
+  this.nome = nome;
+}
+
+function PessoaFisica(nome, cpf) {
+  Pessoas.call(this, nome);
+
+  this.cpf = cpf;
+}
+
+function PessoaJuridica(nome, cnpj) {
+  Pessoas(nome);
+
+  this.cnpj = cnpj;
+}
+
+const pessoaFisica = new PessoaFisica('Foo', '123.456.670-0');
+const pessoaJuridica = new PessoaJuridica('Bar', '12.345.678/9012-34');
+
+console.log(pessoaFisica);
+console.log(pessoaJuridica);
+8*/
+/*
+function Pessoas(nome, idade) {
+  this.nome = nome;
+  this.idade = idade;
+
+  return {
+    nome,
+    idade: 20,
+    falar() {
+      console.log('objeto falar');
+    }
+  }
+}
+
+Pessoas.prototype.falar = function() {
+  console.log('prototype falar');
+};
+
+const pessoa1 = new Pessoas('Foo', 30);
+console.log(pessoa1);
+*/
