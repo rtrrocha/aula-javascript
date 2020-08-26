@@ -166,3 +166,78 @@ console.log(temaprovado);
 const quem = estudantes.find(estudantes => estudantes.nota > 9);
 console.log(quem);
 
+//every (Retorna um booleano verificando se todos os itens
+//de um array satisfazem a condição)
+const todosaprovados = estudantes.every(estudantes => estudantes.nota > 7);
+console.log(todosaprovados);
+
+//sort (Ordena os elementos de uma array de acordo 
+//com a condição)
+const ordenaidades = jidades.sort();
+console.log(ordenaidades);
+const ordenanotas = estudantes.sort((current, next) => current.nota - next.nota);
+console.log(ordenanotas);
+
+//reverse (Inverte os elementos de um array)
+const inverte = jidades.reverse();
+console.log(inverte);
+
+//join (Junta todos os elementos de um array, separados
+//por um delimitador e retorna uma string)
+const juntarelementos = jidades.join('|');
+console.log(juntarelementos);
+
+//reduce (Retorna um novo tipo de dado iterando cada
+// posição de um array)
+const somadoarray = jidades.reduce((total, value) => total += value, 0);
+console.log(somadoarray);
+const media = estudantes.reduce((totalnotas, estudantes) => totalnotas += estudantes.nota, 0) / estudantes.length;
+console.log(media);
+
+
+const alunos = [
+    { nome: "Cris", nota: 10 },
+    { nome: "Alexandre", nota: 7 },
+    { nome: "Pablo", nota: 4 }
+  ];
+  
+  function alunoAprovado(aluno) {
+    return aluno.nota >= 7;
+  }
+  
+  console.log(alunos.filter(alunoAprovado));
+  console.log(alunos.some(alunoAprovado));
+  console.log(alunos.every(alunoAprovado));
+
+  const colaboradores = [
+    { nome: "Cris", horasTrabalhadas: 220 },
+    { nome: "Rebeca", horasTrabalhadas: 210 }
+  ];
+  
+  function adicionaSalario(colaborador) {
+    const salario = colaborador.horasTrabalhadas * 50;
+    colaborador.salario = salario;
+  
+    return {
+      salario: salario
+    };
+  }
+  
+  const colaboradoresComSalario = colaboradores.map(adicionaSalario);
+  
+  console.log(colaboradoresComSalario);
+  const familiaPai = ["Avó Zeca", "Avô Aroldo"];
+const familiaMae = ["Avô Carlos", "Primo João Paulo"];
+
+const familiaFilho = familiaPai.concat(familiaMae);
+
+console.log(familiaPai);
+console.log(familiaMae);
+console.log(familiaFilho);
+
+const pessoas = ["Cris", "Alexandre", "Pablo", "Cris"];
+
+console.log(pessoas.indexOf("Cris"));
+console.log(pessoas.findIndex(nome => nome === "Cris"));
+console.log(pessoas.lastIndexOf("Cris"));
+console.log(pessoas.find(nome => nome === "Cris"));
