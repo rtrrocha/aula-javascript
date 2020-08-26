@@ -153,3 +153,11 @@ console.log(LInmaiorque21);
 const Existe21 = jidades.includes(21);
 console.log(Existe21);
 
+//some (Retorna um booleano verificando se pelo menos
+// um item de um array satisfaz a condição)
+const idadespar = jidades.some(value => value % 2 === 0);
+console.log(idadespar);
+const menorde18 = jidades.some(value => value < 18);
+console.log(menorde18);
+
+
